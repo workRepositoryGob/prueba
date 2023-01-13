@@ -23,10 +23,10 @@ public class ClienteServiceImpl extends CRUDImpl<Cliente,Integer> implements ICl
     }
 
     @Override
-    public Map<String,Double> calculos() {
+    public Map<String,Double> calculosEstadisticos() {
         Map<String,Double> map=new HashMap<>();
             List<Cliente>clientes=repo.findAll();
-            if (clientes.size()>0){
+            if (clientes.size()>1){
                 Double promedio= clientes
                         .stream()
                         .mapToDouble(Cliente::getEdad)
@@ -42,7 +42,6 @@ public class ClienteServiceImpl extends CRUDImpl<Cliente,Integer> implements ICl
                 map.put("Varianza",varianza);
                 map.put("Desviacion Standar",desviacion);
             }
-
           return map;
     }
 

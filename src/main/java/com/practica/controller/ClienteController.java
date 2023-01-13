@@ -29,7 +29,7 @@ public class ClienteController {
 
     @GetMapping("/kpideclientes")
     public ResponseEntity<Map<String,Double>> promedio() throws Exception {
-        return new ResponseEntity<>(service.calculos(), HttpStatus.OK);
+        return new ResponseEntity<>(service.calculosEstadisticos(), HttpStatus.OK);
     }
 
 
